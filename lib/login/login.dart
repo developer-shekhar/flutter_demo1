@@ -73,15 +73,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          new Text(
-                            EngLocals.localizedValue['login_heading'],
-                            style: new TextStyle(
-                              fontSize: 22.0,
-                              color: Colors.white,
+                          new Padding(
+                            padding: const EdgeInsets.only(bottom: 18.0),
+                            child: new Text(
+                              EngLocals.localizedValue['login_heading'],
+                              style: new TextStyle(
+                                fontSize: 22.0,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           new TextFormField(
-                            style: new TextStyle(color: Colors.white),
+                            autocorrect: false,
+                            keyboardType: TextInputType.emailAddress,
+                            style: new TextStyle(
+                                color: Colors.white, fontSize: 18.0),
                             decoration: new InputDecoration(
                               contentPadding:
                                   new EdgeInsets.symmetric(vertical: 18.0),
@@ -99,20 +105,26 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          new TextFormField(
-                            style: new TextStyle(color: Colors.white),
-                            decoration: new InputDecoration(
-                              contentPadding:
-                                  new EdgeInsets.symmetric(vertical: 18.0),
-                              hintText: 'Password',
-                              hintStyle: new TextStyle(color: Colors.white70),
-                              icon: new Icon(Icons.enhanced_encryption,
-                                  color: Colors.white70),
-                              border: new UnderlineInputBorder(
-                                borderSide: new BorderSide(
-                                    color: Colors.white,
-                                    width: 2.0,
-                                    style: BorderStyle.solid),
+                          new Padding(
+                            padding: const EdgeInsets.only(top: 12.0),
+                            child: new TextFormField(
+                              obscureText: true,
+                              autocorrect: false,
+                              style: new TextStyle(
+                                  color: Colors.white, fontSize: 18.0),
+                              decoration: new InputDecoration(
+                                contentPadding:
+                                    new EdgeInsets.symmetric(vertical: 18.0),
+                                hintText: 'Password',
+                                hintStyle: new TextStyle(color: Colors.white70),
+                                icon: new Icon(Icons.enhanced_encryption,
+                                    color: Colors.white70),
+                                border: new UnderlineInputBorder(
+                                  borderSide: new BorderSide(
+                                      color: Colors.white,
+                                      width: 2.0,
+                                      style: BorderStyle.solid),
+                                ),
                               ),
                             ),
                           ),
